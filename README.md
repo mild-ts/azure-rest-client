@@ -1,19 +1,34 @@
-# NPM TypeScript Boilerplate
+# @mild-ts/azure-rest-client
 
-> This repo is only the boilerplate for npm packages, found in npm registry for testing purpose only,
+Opinionated TypeScript Utility Libraries [@mild-ts](https://github.com/mildronize/mild-ts)
 
-## Use this repo
-
+## Installation
 ```
-git clone https://github.com/mildronize/simple-typescript-boilerplate.git [project_name]
-```
-
-```bash
-# start
-npm start
-# Test watch mode
-npm run test:watch
+npm i @mild-ts/azure-rest-client
 ```
 
-## Thanks
-- https://www.youtube.com/watch?v=eh89VE3Mk5g
+### Examples
+```ts
+import { AzureRestClient } from '@mild-ts/azure-rest-client';
+
+async function main() {
+  const client = new AzureRestClient();
+  /**
+   * https://learn.microsoft.com/en-us/rest/api/appservice/web-apps/get
+   */
+  const res = await client.request(
+    'GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}?api-version=2022-03-01',
+    {
+      params: {
+        subscriptionId: '29523625-6fa5-4d9a-86bc-da000544be7d',
+        resourceGroupName: 'rg-thadaw-demo-multi-app',
+        name: 'thadaw-demo-multi-app-ant',
+      },
+    }
+  );
+  console.log(res.status);
+  console.log(res.data);
+}
+
+main();
+```
