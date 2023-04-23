@@ -9,7 +9,20 @@ Opinionated TypeScript Utility Libraries [@mild-ts](https://github.com/mildroniz
 npm i @mild-ts/azure-rest-client
 ```
 
-### Examples
+## Authentication
+
+This package use `DefaultAzureCredential` from `@azure/identity`. The following credential types will be tried, in order:
+
+1. Environment Credential
+2. Managed Identity Credential
+3. Azure Cli Credential
+4. Azure PowerShell Credential
+
+You can read more [Azure Identity client library for JavaScript](https://learn.microsoft.com/en-us/javascript/api/overview/azure/identity-readme?view=azure-node-latest).
+
+Every requeste sent by `AzureRestClient` will be added `Authentication` header getting from the `DefaultAzureCredential`.
+
+## Examples
 ```ts
 import { AzureRestClient } from '@mild-ts/azure-rest-client';
 
