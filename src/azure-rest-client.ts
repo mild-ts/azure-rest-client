@@ -15,33 +15,33 @@ import { AzureRestClientOptions } from './types';
  */
 
 export class AzureRestClient extends RestClient {
-  private _credential: DefaultAzureCredential;
-  private _scopes: string[];
-  private _safeResponse: boolean;
+  private credential: DefaultAzureCredential;
+  private scopes: string[];
+  private safeResponse: boolean;
 
-  constructor(private _option?: AzureRestClientOptions) {
+  constructor(private option?: AzureRestClientOptions) {
     super({
-      ..._option,
+      ...option,
     });
-    this._credential = _option?.credential ?? new DefaultAzureCredential();
-    this._scopes = _option?.scopes ?? ['https://management.azure.com/.default'];
-    this._safeResponse = _option?.safeResponse ?? false;
+    this.credential = option?.credential ?? new DefaultAzureCredential();
+    this.scopes = option?.scopes ?? ['https://management.azure.com/.default'];
+    this.safeResponse = option?.safeResponse ?? false;
   }
 
-  private async _getToken() {
-    const accessToken = await this._credential.getToken(this._scopes, this._option?.getTokenOptions);
+  private async getToken() {
+    const accessToken = await this.credential.getToken(this.scopes, this.option?.getTokenOptions);
     if (!accessToken) throw new Error('Cannot get token');
     return accessToken.token;
   }
 
-  protected override async _parseRequest(
+  protected override async parseRequest(
     method: Method,
     url: string,
     requestConfig: RestClientRequestConfig,
     axiosConfig?: AxiosRequestConfig
   ) {
     const urlWithParams = replaceParams(url, requestConfig.params);
-    if (this._safeResponse) {
+    if (this.safeResponse) {
       axiosConfig = {
         ...axiosConfig,
          /**
@@ -51,10 +51,10 @@ export class AzureRestClient extends RestClient {
       validateStatus: (status) => true,
       };
     }
-    return await this._send(urlWithParams, method, {
+    return await this.send(urlWithParams, method, {
       ...axiosConfig,
       headers: {
-        Authorization: `Bearer ${await this._getToken()}`,
+        Authorization: `Bearer ${await this.getToken()}`,
         ...axiosConfig?.headers,
       },
     });
