@@ -2,6 +2,9 @@ import { DefaultAzureCredential, GetTokenOptions } from '@azure/identity';
 import { RestClientAxiosConfigs } from '@mild-ts/rest-client';
 
 export interface AzureRestClientOptions extends RestClientAxiosConfigs {
+  /**
+   * DefaultAzureCredential instance
+   */
   credential?: DefaultAzureCredential;
   /**
    * DefaultAzureCredential.GetToken scopes
@@ -16,7 +19,7 @@ export interface AzureRestClientOptions extends RestClientAxiosConfigs {
    *
    * To handle response status code manually, please use `validateStatus` option in `AxiosRequestConfig`
    *
-   * @default true
+   * @default false
    */
   safeResponse?: boolean;
 }
