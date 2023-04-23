@@ -1,5 +1,11 @@
 # @mild-ts/npm-typescript-boilerplate
 
+## 0.1.1
+
+### Patch Changes
+
+- 23ed8ce: Using `@mild-ts/rest-client` v0.2.0, Improve doc for authen
+
 ## 0.1.0
 
 ### Minor Changes
