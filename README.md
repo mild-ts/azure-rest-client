@@ -2,6 +2,8 @@
 
 Opinionated TypeScript Utility Libraries [@mild-ts](https://github.com/mildronize/mild-ts)
 
+[![CI](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml/badge.svg)](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml) [![](https://img.shields.io/npm/v/@mild-ts/azure-rest-client)](https://www.npmjs.com/package/@mild-ts/azure-rest-client)
+
 ## Installation
 ```
 npm i @mild-ts/azure-rest-client
