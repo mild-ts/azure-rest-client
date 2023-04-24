@@ -1,5 +1,11 @@
 # @mild-ts/npm-typescript-boilerplate
 
+## 0.2.0
+
+### Minor Changes
+
+- f7b13b6: Use `@mild-ts/rest-client` v0.4.0, restructure func params
+
 ## 0.1.1
 
 ### Patch Changes
