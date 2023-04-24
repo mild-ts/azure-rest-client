@@ -37,10 +37,10 @@ export class AzureRestClient extends RestClient {
   protected override async parseRequest(
     method: Method,
     url: string,
-    requestConfig: RestClientRequestConfig,
+    requestConfig?: RestClientRequestConfig,
     axiosConfig?: AxiosRequestConfig
   ) {
-    const urlWithParams = replaceParams(url, requestConfig.params);
+    const urlWithParams = replaceParams(url, requestConfig?.params);
     if (this.safeResponse) {
       axiosConfig = {
         ...axiosConfig,
