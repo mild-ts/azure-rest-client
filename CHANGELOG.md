@@ -1,5 +1,11 @@
 # @mild-ts/npm-typescript-boilerplate
 
+## 0.2.1
+
+### Patch Changes
+
+- 73cc470: fix: requestConfig can be undefined
+
 ## 0.2.0
 
 ### Minor Changes
