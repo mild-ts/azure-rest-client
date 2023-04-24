@@ -4,14 +4,20 @@ import { RestClientAxiosConfigs } from '@mild-ts/rest-client';
 export interface AzureRestClientOptions extends RestClientAxiosConfigs {
   /**
    * DefaultAzureCredential instance
+   *
+   * @default new DefaultAzureCredential()
    */
   credential?: DefaultAzureCredential;
   /**
    * DefaultAzureCredential.GetToken scopes
+   *
+   * @default ['https://management.azure.com/.default']
    */
   scopes?: string[];
   /**
    * DefaultAzureCredential.getTokenOptions GetTokenOptions
+   *
+   * @default {}
    */
   getTokenOptions?: GetTokenOptions;
   /**
