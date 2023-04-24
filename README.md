@@ -2,7 +2,7 @@
 
 Azure Rest Client Helper for TypeScript extended from [@mild-ts/rest-client](https://github.com/mild-ts/rest-client), support [Azure Credential](#authentication) by default.
 
-[![CI](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml/badge.svg)](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml) [![](https://img.shields.io/npm/v/@mild-ts/azure-rest-client)](https://www.npmjs.com/package/@mild-ts/azure-rest-client)
+[![CI](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml/badge.svg)](https://github.com/mild-ts/azure-rest-client/actions/workflows/main.yml) [![](https://img.shields.io/npm/v/@mild-ts/azure-rest-client)](https://www.npmjs.com/package/@mild-ts/azure-rest-client) [![](https://img.shields.io/npm/dt/@mild-ts/azure-rest-client)](https://www.npmjs.com/package/@mild-ts/azure-rest-client)
 
 ## Installation
 ```
